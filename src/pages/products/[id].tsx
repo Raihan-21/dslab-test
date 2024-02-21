@@ -10,7 +10,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 const ProductDetail = () => {
@@ -19,16 +19,21 @@ const ProductDetail = () => {
     state.products.find((product: any) => product.id == router.query.id)
   );
 
+  const isLoggedIn = useSelector((state: any) => state.profile.isLoggedIn);
   const dispatch = useDispatch();
 
   const [jumlah, setJumlah] = useState(1);
+  const addToCart = useCallback(() => {
+    if (!isLoggedIn) router.push("/login");
+    dispatch(addTotalItem(jumlah));
+  }, [isLoggedIn]);
 
   return (
     <Box minHeight={"100vh"} padding={30}>
       {productDetail && (
         <Grid templateColumns={"repeat(4, 1fr)"} columnGap={10}>
           <GridItem colSpan={3}>
-            <Flex>
+            <Flex columnGap={10}>
               <Img src={productDetail.img} className="max-w-[400px]" />
               <Box>
                 <Text fontWeight={"bold"} fontSize={"larger"} marginBottom={5}>
@@ -89,7 +94,7 @@ const ProductDetail = () => {
                 color={"white"}
                 width={"100%"}
                 marginBottom={3}
-                onClick={() => dispatch(addTotalItem(jumlah))}
+                onClick={addToCart}
               >
                 Tambah ke keranjang
               </Button>

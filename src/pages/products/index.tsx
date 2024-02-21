@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 const Products = () => {
   const products = useSelector((state: any) => state.products);
   return (
-    <Box minHeight={"100vh"}>
+    <Box minHeight={"100vh"} padding={20}>
       <Flex columnGap={10}>
         {products.length &&
           products.map((product: any) => (
