@@ -16,7 +16,7 @@ const Navbar = () => {
         <Link href={"/"}>
           <Box>
             <Text fontWeight={"bold"} fontSize={"larger"}>
-              Toko Sepatu
+              Sepatoe
             </Text>
           </Box>
         </Link>
