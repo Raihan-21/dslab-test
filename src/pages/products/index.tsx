@@ -13,8 +13,8 @@ const Products = () => {
       </Text>
       <Flex columnGap={10}>
         {products.length &&
-          products.map((product: any) => (
-            <Link href={`/products/${product.id}`}>
+          products.map((product: any, i: number) => (
+            <Link href={`/products/${product.id}`} key={i}>
               <ProductCard data={product} />
             </Link>
           ))}

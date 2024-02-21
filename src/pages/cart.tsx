@@ -18,8 +18,8 @@ const Cart = () => {
     <Flex padding={20} minHeight={"100vh"} columnGap={10}>
       <Box borderRadius={20} background={"white"} padding={10}>
         {cartItems.length &&
-          cartItems.map((item: any) => (
-            <Flex justifyContent={"space-between"}>
+          cartItems.map((item: any, i: number) => (
+            <Flex justifyContent={"space-between"} key={i}>
               <Flex columnGap={10}>
                 <Img src={item.img} maxWidth={100} />
                 <Box>
