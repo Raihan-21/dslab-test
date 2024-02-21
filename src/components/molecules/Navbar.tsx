@@ -28,7 +28,9 @@ const Navbar = () => {
                   Masuk
                 </Button>
               </Link>
-              <Button variant={"nostyle"}>Daftar</Button>
+              <Link href={"/register"}>
+                <Button variant={"nostyle"}>Daftar</Button>
+              </Link>
             </>
           ) : (
             <>
