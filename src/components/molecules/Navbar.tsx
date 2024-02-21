@@ -15,7 +15,7 @@ const Navbar = () => {
       <Flex justifyContent={"space-between"} alignItems={"center"} padding={5}>
         <Link href={"/"}>
           <Box>
-            <Text fontWeight={"bold"} fontSize={"x-large"}>
+            <Text fontWeight={"bold"} fontSize={"larger"}>
               Toko Sepatu
             </Text>
           </Box>
