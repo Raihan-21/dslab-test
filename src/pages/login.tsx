@@ -61,17 +61,21 @@ const Login = () => {
           </Text>
           <form onSubmit={submit}>
             <Box marginBottom={5} className="space-y-4">
-              <FormLabel>Email</FormLabel>
-              <Input
-                placeholder="user@gmail.com"
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              <FormLabel>Password</FormLabel>
-              <Input
-                placeholder="test123"
-                type="password"
-                onChange={(e) => setPassword(e.target.value)}
-              />
+              <Box>
+                <FormLabel>Email</FormLabel>
+                <Input
+                  placeholder="user@gmail.com"
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </Box>
+              <Box>
+                <FormLabel>Password</FormLabel>
+                <Input
+                  placeholder="test123"
+                  type="password"
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </Box>
             </Box>
             <Button backgroundColor={"black"} color={"white"} type="submit">
               Login

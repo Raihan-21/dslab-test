@@ -36,7 +36,9 @@ const Navbar = () => {
                 <Text position={"absolute"} top={-5} right={-2}>
                   {cartTotalItem}
                 </Text>
-                <FiShoppingCart />
+                <Link href={"/cart"}>
+                  <FiShoppingCart />
+                </Link>
               </Box>
               <FaUser />
             </>

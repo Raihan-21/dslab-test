@@ -1,4 +1,4 @@
-import { addTotalItem } from "@/store/cartSlice";
+import { addItem, addTotalItem } from "@/store/cartSlice";
 import {
   Box,
   Button,
@@ -26,7 +26,8 @@ const ProductDetail = () => {
   const addToCart = useCallback(() => {
     if (!isLoggedIn) router.push("/login");
     dispatch(addTotalItem(jumlah));
-  }, [isLoggedIn]);
+    dispatch(addItem({ ...productDetail, jumlah }));
+  }, [isLoggedIn, jumlah]);
 
   return (
     <Box minHeight={"100vh"} padding={30}>
