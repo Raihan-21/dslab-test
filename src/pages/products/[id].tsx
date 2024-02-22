@@ -32,10 +32,14 @@ const ProductDetail = () => {
   return (
     <Box minHeight={"100vh"} padding={30}>
       {productDetail && (
-        <Grid templateColumns={"repeat(4, 1fr)"} columnGap={10}>
-          <GridItem colSpan={3}>
-            <Flex columnGap={10}>
-              <Img src={productDetail.img} className="max-w-[400px]" />
+        <Grid
+          templateColumns={"repeat(4, 1fr)"}
+          columnGap={[0, 10]}
+          rowGap={10}
+        >
+          <GridItem colSpan={[4, 3]}>
+            <Flex columnGap={10} flexDirection={["column", "row"]}>
+              <Img src={productDetail.img} className="max-w-[400px] w-full" />
               <Box>
                 <Text fontWeight={"bold"} fontSize={"larger"} marginBottom={5}>
                   {productDetail.title}
@@ -54,7 +58,7 @@ const ProductDetail = () => {
               </Box>
             </Flex>
           </GridItem>
-          <GridItem>
+          <GridItem colSpan={[4, 1]}>
             <Box border={"1px solid black"} borderRadius={10} padding={10}>
               <Flex marginBottom={10} columnGap={5}>
                 <Button

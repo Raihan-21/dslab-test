@@ -6,7 +6,8 @@ const ProductCard = ({ data }: { data: any }) => {
     <Flex
       flexDirection={"column"}
       justifyContent={"space-between"}
-      maxWidth={200}
+      maxWidth={["100%", 200]}
+      width={"100%"}
       height={"100%"}
       paddingY={8}
       paddingX={5}
